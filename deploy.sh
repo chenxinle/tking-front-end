@@ -1,0 +1,1 @@
+./package.sh && ./upload.sh
