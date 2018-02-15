@@ -91,7 +91,6 @@ if (isProd) {
 
 function initRenderer(bundle, clientManifest) {
   console.log('new renderer')
-  // let serverBundleJsonPath = path.resolve(__dirname, '../dist/vue-ssr-server-bundle.json')
 
   /**
    * 这里有个大坑，在dev环境下webpack(serverConfig)并没有生成vue-ssr-server-bundle.json
@@ -99,7 +98,6 @@ function initRenderer(bundle, clientManifest) {
    * 如果使用path.resolve(__dirname, '../dist/vue-ssr-server-bundle.json')，则会报文件不存在的错误
    */
   const { createBundleRenderer } = require('vue-server-renderer')
-// const renderer = require('vue-server-renderer').createRenderer()
   renderer = createBundleRenderer(bundle, {
     runInNewContext: false,
     template: template,
@@ -124,6 +122,8 @@ server.use('/api', proxy(options))
 server.use(favicon(resolve('../build/logo.jpg')))
 
 server.get('*', (req, res) => {
+
+  console.log('get url' + req.url)
 
   if (!renderer) {
     return res.end('waiting for compilation... refresh in a moment.')

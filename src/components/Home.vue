@@ -1,5 +1,14 @@
 <template>
   <div id="home">
+    <div class="doc">
+      <div>
+        Vue+node+elementUI+SpringBoot+MyBatis完成后端渲染
+      </div>
+      <div style="text-align: left">
+        <span>文档链接：</span>
+        <a href="http://gitbook.mrsdian.com/tking/" target="_blank">http://gitbook.mrsdian.com/tking/</a>
+      </div>
+    </div>
     <img :src="avatar" class="avatar" />
     <div class="name">{{user && user.name}}</div>
   </div>
@@ -43,5 +52,10 @@
   }
   #home .name {
     font-size: 50px;
+  }
+  #home .doc {
+    position: absolute;
+    left: 15px;
+    top: 100px;
   }
 </style>

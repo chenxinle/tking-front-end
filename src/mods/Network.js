@@ -1,26 +1,25 @@
 import axios from 'axios'
 
 export default {
+  baseUrl() {
+    if (typeof window !== 'undefined') {
+      return ''
+    } else {
+      return 'http://localhost:8080'
+    }
+  },
   get(url, params) {
     return axios({
       method: 'get',
-      url: url,
+      url: this.baseUrl() + url,
       params: params || {},
-      proxy: {
-        host: '127.0.0.1',
-        port: 8080
-      }
     })
   },
   post(url, data) {
     return axios({
       method: 'post',
-      url: url,
+      url: this.baseUrl() + url,
       data: data || {},
-      proxy: {
-        host: '127.0.0.1',
-        port: 8080
-      }
     })
   }
 }
