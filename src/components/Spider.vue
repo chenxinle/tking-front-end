@@ -3,10 +3,6 @@
     <el-button @click="startSpider">开始爬取</el-button>
     <el-button @click="getActivities">获取演出</el-button>
     <el-button @click="clear">清空演出</el-button>
-    <div class="doc">
-      <span>文档链接：</span>
-      <a href="http://gitbook.mrsdian.com/tking-back-end/" target="_blank">http://gitbook.mrsdian.com/tking-back-end/</a>
-    </div>
     <div class="hint">
       <p v-html="hintText"></p>
     </div>

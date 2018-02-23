@@ -1,12 +1,16 @@
 <template>
   <div id="home">
     <div class="doc">
-      <div>
-        Vue+node+elementUI+SpringBoot+MyBatis完成后端渲染
+      <div style="text-align: left">
+        <p>Vue+node+elementUI+SpringBoot+MyBatis完成后端渲染</p>
+        <p>因为平时工作比较忙，页面比较简单，只搭了一个架子</p>
+        <p>项目架构较重要，内容的丰富只是在架构上写一些业务而已</p>
       </div>
       <div style="text-align: left">
-        <span>文档链接：</span>
-        <a href="http://gitbook.mrsdian.com/tking/" target="_blank">http://gitbook.mrsdian.com/tking/</a>
+        <a href="http://gitbook.mrsdian.com/tking/" target="_blank" class="document">前端文档链接</a>
+      </div>
+      <div style="text-align: left">
+        <a href="http://gitbook.mrsdian.com/tking-back-end/" target="_blank" class="document">后端文档链接</a>
       </div>
     </div>
     <img :src="avatar" class="avatar" />
@@ -46,6 +50,9 @@
     align-items: center;
     justify-content: center;
     height: 100%;
+  }
+  #home .document {
+    color: #42b983;
   }
   #home .avatar {
     border-radius: 50%;
